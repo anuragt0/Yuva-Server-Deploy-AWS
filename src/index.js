@@ -15,6 +15,10 @@ const { createDir } = require("./utilities/helper_functions");
 const { vars } = require("./utilities/constants");
 
 // routes
+app.get('/', (req,res)=>{
+    res.status(200).send("success");
+})
+
 app.use("/api/user/auth", require("./api/routes/user.js"));
 
 app.use("/api/admin/auth", require("./api/routes/admin.js"));
