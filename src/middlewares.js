@@ -10,7 +10,7 @@ const { vars } = require("./utilities/constants");
 
 const fetchPerson = (req, res, next) => {
   const token = req.header("auth-token");
-  // console.log(token);
+  console.log(token);
   // * if token is verified then the mongoId contained in the token always belongs to some user doc
 
   if (!token) {
@@ -26,8 +26,8 @@ const fetchPerson = (req, res, next) => {
 
     // console.log(req.role);
     next();
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    console.log(err.message);
     res
       .status(401)
       .send({ statusText: statusText.INVALID_TOKEN, isLoggedIn: false });
