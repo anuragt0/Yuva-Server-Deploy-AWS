@@ -14,7 +14,7 @@ connectToMongoDB();
 const { createDir } = require("./utilities/helper_functions");
 const { vars } = require("./utilities/constants");
 
-// routes
+// routess
 app.get('/', (req,res)=>{
     res.status(200).send("success");
 })
